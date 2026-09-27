@@ -14,6 +14,7 @@ export default function Header() {
     >
       <div
         className="container"
+        data-header-layout
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -21,7 +22,7 @@ export default function Header() {
           height: 72,
         }}
       >
-        <span style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 900, fontSize: 19 }}>
+        <span data-header-brand style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 900, fontSize: 19 }}>
           <span
             style={{
               width: 34,
@@ -39,9 +40,14 @@ export default function Header() {
           >
             B
           </span>
-          Shree Balaji <span className="gradient-text">Medical</span>
+          <span data-header-brand-name>
+            <span>Shree Balaji</span>
+            <span className="gradient-text">Medical</span>
+          </span>
         </span>
-        <ThemeToggle />
+        <div data-header-theme-toggle>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

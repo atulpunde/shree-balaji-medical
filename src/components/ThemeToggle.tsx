@@ -13,7 +13,7 @@ export default function ThemeToggle() {
   const { colorTheme, mode, cycleTheme, toggleMode } = useTheme();
 
   return (
-    <div style={{ display: "flex", gap: 8 }}>
+    <div data-theme-toggle style={{ display: "flex", gap: 8 }}>
       <button onClick={cycleTheme} title="Switch color theme (this session only)" style={pillStyle}>
         <FaPalette /> {themeLabels[colorTheme]}
       </button>
