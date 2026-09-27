@@ -1,0 +1,274 @@
+:root {
+  --radius: 20px;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ================= TRUST TECH THEME ================= */
+[data-theme="trustTech"][data-mode="dark"] {
+  --bg: #060c1a;
+  --bg-alt: #0c1830;
+  --card: #101e3d;
+  --text: #eaf1ff;
+  --text-muted: #9fb3d1;
+  --primary: #2f8bff;
+  --primary-glow: rgba(47, 139, 255, 0.45);
+  --accent: #57c7ff;
+  --border: #1e2f52;
+}
+[data-theme="trustTech"][data-mode="light"] {
+  --bg: #f4f8ff;
+  --bg-alt: #e8f0ff;
+  --card: #ffffff;
+  --text: #0b1a33;
+  --text-muted: #45577a;
+  --primary: #1866d1;
+  --primary-glow: rgba(24, 102, 209, 0.25);
+  --accent: #2f8bff;
+  --border: #d7e3fb;
+}
+
+/* ================= MED FRESH THEME ================= */
+[data-theme="medFresh"][data-mode="dark"] {
+  --bg: #0a0f0d;
+  --bg-alt: #111a17;
+  --card: #16221d;
+  --text: #eafff4;
+  --text-muted: #9dc7b3;
+  --primary: #23c88a;
+  --primary-glow: rgba(35, 200, 138, 0.45);
+  --accent: #6ee7b7;
+  --border: #1f3329;
+}
+[data-theme="medFresh"][data-mode="light"] {
+  --bg: #f3fbf7;
+  --bg-alt: #e6f6ee;
+  --card: #ffffff;
+  --text: #0d2019;
+  --text-muted: #3f6353;
+  --primary: #0f9d63;
+  --primary-glow: rgba(15, 157, 99, 0.25);
+  --accent: #23c88a;
+  --border: #d3ebe0;
+}
+
+/* ================= GEN-Z BOLD THEME (default) ================= */
+[data-theme="genZBold"][data-mode="dark"] {
+  --bg: #100a1c;
+  --bg-alt: #180f2b;
+  --card: #22163d;
+  --text: #f3ecff;
+  --text-muted: #b8a6e0;
+  --primary: #b06bff;
+  --primary-glow: rgba(176, 107, 255, 0.5);
+  --accent: #4de8ff;
+  --border: #2e2050;
+}
+[data-theme="genZBold"][data-mode="light"] {
+  --bg: #faf6ff;
+  --bg-alt: #f1e8ff;
+  --card: #ffffff;
+  --text: #1c1030;
+  --text-muted: #5b4d7a;
+  --primary: #8b3ff0;
+  --primary-glow: rgba(139, 63, 240, 0.25);
+  --accent: #00b8d9;
+  --border: #e3d6fb;
+}
+
+/* ================= LAYOUT UTILITIES ================= */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+section {
+  padding: 96px 0;
+  position: relative;
+}
+
+h1, h2, h3 { line-height: 1.1; }
+
+/* Section eyebrow / kicker pill */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  color: var(--primary);
+  background: var(--card);
+}
+
+.display-heading {
+  font-size: clamp(38px, 7vw, 76px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+.section-heading {
+  font-size: clamp(28px, 4.5vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary);
+}
+
+/* ============ WhatsApp CTA (still the ONE consistent action color) ============ */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #04150c;
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 3px solid #04150c;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 6px 6px 0 var(--text);
+}
+.btn-whatsapp:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--text);
+}
+.btn-whatsapp:active {
+  transform: translate(0, 0);
+  box-shadow: 3px 3px 0 var(--text);
+}
+
+/* ============ Neo-brutalist chunky button (secondary CTA) ============ */
+.btn-chunky {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary);
+  color: var(--bg);
+  font-weight: 800;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 3px solid var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 6px 6px 0 var(--text);
+}
+.btn-chunky:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--text);
+}
+
+/* ============ Neo-brutalist card ============ */
+.card-neo {
+  background: var(--card);
+  border: 2.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ============ Sticker chip (non-clickable item tags) ============ */
+.sticker-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 2px dashed var(--border);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ============ Marquee (item types / testimonials) ============ */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+.marquee-left {
+  animation: marquee-left 28s linear infinite;
+}
+.marquee-right {
+  animation: marquee-right 32s linear infinite;
+}
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* ============ Ambient floating blobs ============ */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 0;
+  pointer-events: none;
+  animation: blob-float 10s ease-in-out infinite;
+}
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -18px) scale(1.08); }
+}
+
+/* ============ Typing dots (hero chat mockup) ============ */
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40% { transform: translateY(-5px); opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 56px 0; }
+}
